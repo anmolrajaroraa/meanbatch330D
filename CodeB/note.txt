@@ -1,0 +1,26 @@
+Approach - 1
+HTML —> PlaceHolder 
+Skeleton of HTML is Present , We Need to Fill the Data only on Runtime.
+HRA _________
+DA ________
+
+
+Approach - 2
+HTML is not Present
+On Runtime HTML Will be generated also with the Data.
+
+
+
+Why u Learn MVC?
+Segregation of Concern
+MVC Application
+
+1. M - Model => Contains the Data and the Logic , Server Talks also in Model.
+
+2. C - Controller => It is a glue b/w view and Model . It pick (Input) the data from the View and Give it to Model ,  Model will do the Logic Stuff.
+and Get the result back from the Model and for Output give it to the View.
+
+Controller will do only Input and Output.
+
+
+3. V - View => HTML / Presentation Layer.
