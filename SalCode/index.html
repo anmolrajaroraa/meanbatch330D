@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Salary Calculator</title>
+    <script src="js/calculate.js"></script>
+</head>
+
+<body>
+    <h1>Salary Calculator</h1>
+    Salary is <span id="result"></span>
+    <table border="1">
+        <tr>
+            <td><label for="">Salary</label></td>
+            <td><input id='sal' onkeyup="takeSalary()" class='A' type="text" placeholder="Type Salary"></td>
+        </tr>
+        <tr>
+            <!--onclick="takeSalary()" -->
+            <td><button onclick="print()">Compute</button></td>
+            <td><button>Clear All</button></td>
+        </tr>
+        <tr>
+            <td><label for="">HRA</label></td>
+            <td><span id="hra"></span></td>
+        </tr>
+        <tr>
+            <td><label for="">DA</label></td>
+            <td><span id="da"></span></td>
+        </tr>
+        <tr>
+            <td><label for="">TA</label></td>
+            <td><span id="ta"></span></td>
+        </tr>
+        <tr>
+            <td><label for="">PF</label></td>
+            <td><span id="pf"></span></td>
+        </tr>
+        <tr>
+            <td><label for="">G.S</label></td>
+            <td><span id="grosssal"></span></td>
+        </tr>
+        <tr>
+            <td><label for="">Tax</label></td>
+            <td><span id="tax"></span></td>
+        </tr>
+        <tr>
+            <td><label for="">N.S</label></td>
+            <td><span id="netsal"></span></td>
+        </tr>
+    </table>
+</body>
+
+</html>
