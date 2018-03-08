@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .size {
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+    <script>
+        function printImage(path) {
+            var img = document.createElement("img");
+            img.src = path;
+            img.className = "size";
+            document.querySelector("#showImages").appendChild(img);
+        }
+
+
+        function doAjax() {
+
+            var searchImg = document.querySelector("#search").value;
+            const url = "http://api.giphy.com/v1/gifs/search?q=" + searchImg + "&api_key=vFRSFWo6g7vJ7ZAjt3DMDolU52ORTxwH&limit=15";
+            fetch(url).then(data => data.json().then(dt => {
+                document.querySelector("#showImages").innerHTML = "";
+                console.log("JSON Data is ", dt.data);
+                for (let i = 0; i < dt.data.length; i++) {
+                    printImage(dt.data[i].images.original.url);
+                    //console.log(dt.data[i].images.original.url);
+                }
+            }).catch(err => console.log("Invalid JSON "))).catch(err => console.log("Error is ", err));
+            // console.log("Before Loop");
+            // for (let i = 1; i <= 10000000000; i++) {
+
+            // }
+            // console.log("After Loop");
+
+        }
+        var counter = 1;
+
+        function hello() {
+            document.querySelector("#result").innerText = counter;
+            counter++;
+        }
+    </script>
+</head>
+
+<body>
+    <h2>Ajax Example</h2>
+    <input id="search" type="text" placeholder="Type to Search">
+    <button onclick="doAjax()">Load Images</button>
+    <button onclick="hello()">Say Hello</button> Count is <span id="result"></span>
+    <hr>
+    <div id="showImages">
+
+    </div>
+</body>
+
+</html>
