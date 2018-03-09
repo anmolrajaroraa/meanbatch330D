@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+        .green {
+            background-color: green;
+        }
+        
+        .red {
+            background-color: red;
+        }
+        
+        .yellow {
+            background-color: yellow;
+        }
+    </style>
+    <title>Emp </title>
+    <script>
+        var sum = 0;
+
+        function totalSalary(salary) {
+            sum = sum + salary;
+        }
+
+        function averageSalary(totalEmps) {
+            return sum / totalEmps;
+        }
+        var highestSal = 0;
+
+        function highestSalary(salary) {
+            if (salary > highestSal) {
+                highestSal = salary;
+            }
+        }
+        var lowestSal;
+
+        function setLowest(salary) {
+            lowestSal = salary;
+        }
+
+        function lowestSalary(salary) {
+            if (salary < lowestSal) {
+                lowestSal = salary;
+            }
+        }
+
+        function printTable(emp) {
+            var style = "";
+            var tbody = document.querySelector("#emptable");
+            var tr = tbody.insertRow();
+            if (emp.salary > 40000) {
+                style = "green";
+            } else
+            if (emp.salary <= 40000 && emp.salary >= 30000) {
+                style = "yellow";
+            } else {
+                style = "red";
+            }
+            tr.className = style;
+            tr.insertCell(0).innerHTML = emp.id;
+            tr.insertCell(1).innerHTML = emp.name;
+            tr.insertCell(2).innerHTML = emp.salary;
+
+        }
+
+        function printReport(count) {
+            document.querySelector("#report").innerHTML = "Total Salary is " + sum + " Average Salary " + averageSalary(count) + " Highest Salary is " + highestSal + " Lowest Salary is " + lowestSal;
+        }
+
+        function fetchEmp() {
+            const url = "https://raw.githubusercontent.com/amitsrivastava4all/meanbatch330D/master/emp.json";
+            fetch(url).then(data => data.json().then(dt => {
+                var empArray = dt.emplist;
+                console.log("Emp Array is ", empArray);
+                setLowest(empArray[0].salary);
+                for (let emp of empArray) {
+                    printTable(emp);
+                    totalSalary(emp.salary);
+                    highestSalary(emp.salary);
+                    lowestSalary(emp.salary);
+                }
+                printReport(empArray.length);
+            })).catch(err => console.log("Error ", err));
+
+        }
+    </script>
+</head>
+
+<body>
+    <button onclick="fetchEmp()">Load</button>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Salary</th>
+            </tr>
+        </thead>
+        <tbody id="emptable">
+
+        </tbody>
+
+    </table>
+    <p id="report"></p>
+</body>
+
+</html>
