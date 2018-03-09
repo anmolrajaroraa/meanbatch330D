@@ -1,0 +1,37 @@
+{
+	"emplist": [{
+			"id": 1001,
+			"name": "Ram",
+			"salary": 90000
+		}, {
+			"id": 1002,
+			"name": "Shyam",
+			"salary": 80000
+		}, {
+			"id": 1003,
+			"name": "Tim",
+			"salary": 9000
+		}, {
+			"id": 1004,
+			"name": "Ramesh",
+			"salary": 1000
+		}, {
+			"id": 1005,
+			"name": "Kim",
+			"salary": 92000
+		}, {
+			"id": 1006,
+			"name": "Vim",
+			"salary": 20000
+		},
+		{
+			"id": 1007,
+			"name": "Jim",
+			"salary": 19000
+		}, {
+			"id": 1008,
+			"name": "Sim",
+			"salary": 30000
+		}
+	]
+}
