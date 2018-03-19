@@ -1,0 +1,81 @@
+
+function calc(x){
+
+function add(){
+
+}
+function subtract(){
+}
+function divide(){
+
+}
+var obj = {add,subtract,divide};
+return obj;
+
+}
+undefined
+
+function calc(x){
+
+function add(y){
+return  x + y;
+}
+function subtract(y){
+return x - y;
+}
+function divide(y){
+return x /y;
+
+}
+var obj = {add,subtract,divide};
+return obj;
+
+}
+undefined
+var obj = calc(100);
+undefined
+obj;
+{add: ƒ, subtract: ƒ, divide: ƒ}
+obj.add(10);
+110
+x;
+VM4164:1 Uncaught ReferenceError: x is not defined
+    at <anonymous>:1:1
+(anonymous) @ VM4164:1
+
+function calc(x){
+
+function add(y){
+return  x + y;
+}
+function subtract(y){
+return x - y;
+}
+function divide(y){
+return x /y;
+
+}
+var obj = {add,subtract,divide};
+return obj;
+
+}
+undefined
+var obj = calc(100);
+undefined
+obj.add(10);
+110
+x;
+VM4566:1 Uncaught ReferenceError: x is not defined
+    at <anonymous>:1:1
+(anonymous) @ VM4566:1
+(function(){
+	console.log("I am IIF .... ");
+})();
+VM5221:2 I am IIF .... 
+undefined
+(function(a,b){
+	console.log("I am IIF .... ");
+return a +b;
+})(100,200);
+VM5571:2 I am IIF .... 
+300
