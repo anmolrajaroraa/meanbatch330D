@@ -1,0 +1,28 @@
+document.getElementById("twotabsearchtextbox");
+<input type=​"text" id=​"twotabsearchtextbox" value name=​"field-keywords" autocomplete=​"off" placeholder class=​"nav-input" dir=​"auto" tabindex=​"6">​
+document.getElementById("twotabsearchtextbox").value;
+"mobile"
+function test(){
+};
+undefined
+var e  = 100;
+undefined
+e = function test(){
+console.log("E .... ");
+}
+ƒ test(){
+console.log("E .... ");
+}
+e;
+ƒ test(){
+console.log("E .... ");
+}
+var f = function(){
+}
+undefined
+function one(){
+}
+undefined
+console.dir(one);
+VM4717:1 ƒ one()arguments: nullcaller: nulllength: 0name: "one"prototype: {constructor: ƒ}__proto__: ƒ ()[[FunctionLocation]]: VM4568:1[[Scopes]]: Scopes[1]
+undefined
