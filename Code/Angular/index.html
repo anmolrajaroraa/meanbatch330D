@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="custom.css">
+    <script src="angular.min.js"></script>
+</head>
+
+<body ng-app>
+    <input type="checkbox" ng-model="order">{{order}}
+    <select ng-model="sorting">
+        <option value='price'>By Price</option>
+        <option value='city'>By City</option>
+        <option value='name'>By Name</option>
+    </select> {{sorting}}
+    <input type="text" placeholder="Type to Search" ng-model="search.price">
+    <table border="1">
+        <tr ng-class-even="'red'" ng-class-odd="'green'" ng-repeat="fruit in [{name:'Apple',city:'Delhi',price:90},{name:'Orange',city:'Delhi',price:100},{name:'Banana',city:'Delhi',price:50}]|filter:search|orderBy:sorting:order">
+            <td>{{fruit.name}}</td>
+            <td>{{fruit.city}}</td>
+            <td>{{fruit.price}}</td>
+
+        </tr>
+    </table>
+    <!-- <ul>
+        <li ng-repeat="fruit in ['Apple','Orange','Banana']">
+            {{fruit}}
+        </li>
+    </ul> -->
+    <input ng-init="showhide=false" ng-model="showhide" type="checkbox"> Show Price Calc {{showhide}}
+    <br>
+    <span ng-show="price*qt>2000">Discount 20%</span>
+    <div ng-show="showhide">
+        <input ng-init="price=0" ng-model="price" type="text">
+        <input ng-init="qt=0" ng-model="qt" type="text">
+        <p ng-class="{'red':price*qt<1000,'green':price*qt>=1000}"> Amount is {{price*qt|currency:'&#8377;'}}</p>
+        <input type="text" ng-model="myname" placeholder="Type Your Name Here">
+        <br>
+        <h2>Your Name is {{myname|uppercase}}</h2>
+    </div>
+</body>
+
+</html>
