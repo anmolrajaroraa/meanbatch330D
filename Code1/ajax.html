@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="angular.min.js"></script>
+    <script src="node_modules/angular-sanitize/angular-sanitize.min.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/filter.js"></script>
+    <script src="js/factory.js"></script>
+    <script src="js/controller.js"></script>
+</head>
+
+<body ng-app="myapp" ng-controller="myctrl">
+    <select ng-model="artist">
+        <option>Jack Johnson</option>
+        <option>Michal Jackson</option>
+        
+    </select>
+    <button ng-click="loadSongs()">Load Songs</button>
+    <!-- <br> Result is {{songs}} -->
+    <ul>
+        <li ng-repeat="song in songs">
+
+            <fieldset>
+                <legend>{{song.collectionName}}</legend>
+                <p>Song {{song.trackName|uppercase}}</p>
+                <img ng-src="{{song.artworkUrl100}}">
+                <!-- <video controls="" name="media"><source ng-src="{{song.previewUrl|trusted}}" type="audio/x-m4a"></video> -->
+                <audio controls>
+                        <source ng-src="{{song.previewUrl|trusted}}" type="audio/x-m4a">
+                </audio>
+            </fieldset>
+        </li>
+    </ul>
+</body>
+
+</html>
