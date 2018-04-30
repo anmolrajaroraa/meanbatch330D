@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="angular.min.js"></script>
+    <script>
+        // Step -1 Create Module
+        const app = angular.module("myapp", []);
+        // Create Controller
+        app.controller("myctrl", ($scope, mymodel) => {
+            console.log("controller Start....");
+            $scope.like = () => {
+                var result = mymodel.increment();
+                $scope.output = result;
+            }
+        });
+        app.factory("mymodel", () => {
+            var object = {
+                num: 0,
+                increment() {
+                    this.num++;
+                    console.log("Value Incremented ", this.num);
+                    return this.num;
+                }
+            };
+            console.log("Factory Loaded...", object);
+            return object;
+        })
+    </script>
+</head>
+
+<body ng-app="myapp" ng-controller="myctrl">
+    <h1>MVC</h1>
+    <button ng-click="like()">Like</button> {{output}}
+</body>
+
+</html>
