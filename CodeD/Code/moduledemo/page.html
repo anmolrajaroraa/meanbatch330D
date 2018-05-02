@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        ul>li {
+            display: inline;
+            padding: 5px;
+        }
+    </style>
+    <script src="libs/angular.min.js"></script>
+    <script src="libs/angular-route.min.js"></script>
+    <script src="routing/app.js"></script>
+</head>
+
+<body ng-app="myspa">
+    <header>
+        <ul>
+            <li><a ng-href="/#">Home</a></li>
+            <li><a ng-href="/#about">About</a></li>
+            <li><a ng-href="/#contact">Contact</a></li>
+            <li><a ng-href="/#news">News</a></li>
+
+        </ul>
+    </header>
+    <section>
+        <ng-view></ng-view>
+    </section>
+    <footer>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <h3>Terms and Conditons...</h3>
+    </footer>
+</body>
+
+</html>
