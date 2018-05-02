@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        ul>li {
+            display: inline;
+            padding: 10px;
+        }
+    </style>
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script src="bower_components/angular-route/angular-route.min.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/controller.js"></script>
+    <script src="js/routes.js"></script>
+</head>
+
+<body ng-app="spa">
+    <h1>Master Page</h1>
+    <ul>
+        <li><a ng-href="#/">Home</a></li>
+        <li><a ng-href="#/about/Ram/21">About</a></li>
+        <li><a ng-href="#/contact">Contact</a></li>
+        <br>
+        <br>
+        <br>
+        <fieldset>
+            <legend>Output</legend>
+            <ng-view></ng-view>
+        </fieldset>
+
+    </ul>
+</body>
+
+</html>
