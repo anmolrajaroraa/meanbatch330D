@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="angular.min.js"></script>
+    <style>
+        span {
+            color: red;
+        }
+        
+        input.ng-invalid {
+            border-color: red;
+        }
+        
+        input.ng-valid {
+            border-color: green;
+        }
+    </style>
+</head>
+
+<body ng-app>
+    <form name="f1" novalidate>
+        <input name="userid" required ng-model="userid" type="text">
+        <span ng-show="f1.userid.$touched && f1.userid.$pristine">Userid can't be blank</span>
+
+
+        <input name="creditcard" required pattern="[0-9]{3,10}" ng-model="creditcard" type="text">
+        <span ng-show="f1.creditcard.$touched && f1.creditcard.$pristine">Credit Card Can't Be Empty</span>
+        <span ng-show="f1.creditcard.$touched && f1.creditcard.$invalid && f1.creditcard.$error['required']">CreditCard can't be blank...</span>
+        <span ng-show="f1.creditcard.$dirty && f1.creditcard.$invalid && f1.creditcard.$error['pattern']">Credit Card B/w 3 to 10 Digit</span>
+        <button type="submit">Login</button>
+    </form>
+</body>
+
+</html>
